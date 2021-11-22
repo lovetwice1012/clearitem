@@ -82,7 +82,7 @@ final class HomingMissileArrow extends Arrow{
 	protected function onHit(ProjectileHitEvent $event) : void{
 		$this->setCritical(false);
 		$this->broadcastSound(new ArrowHitSound());
-		$explosion = new Explosion($event->getEntity()->location->asLocation(), 5);
+		$explosion = new Explosion($event->getEntity()->location->asLocation(), 8);
 		$explosion->explodeB();
 	}
 }
