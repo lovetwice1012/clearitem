@@ -12,7 +12,7 @@ use pocketmine\world\Explosion;
 use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\world\sound\ArrowHitSound;
 
-final class HomingMissile extends Arrow{
+final class HomingMissileArrow extends Arrow{
     protected $gravity = 0;
 	protected $damage = 3.0;
 	protected $punchKnockback = 2.0;
