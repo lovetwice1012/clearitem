@@ -71,6 +71,8 @@ use nexuscore\arrow\DoubleGravityArrow;
 use nexuscore\arrow\NewArrow;
 use nexuscore\arrow\HomingArrow;
 use nexuscore\arrow\HiPowerHomingArrow;
+use nexuscore\arrow\HomingMissile;
+use nexuscore\arrow\HomingMissileArrow;
 
 /* nexucore tasks */
 use nexuscore\task\entitykilltask;
@@ -185,6 +187,7 @@ class nexuscore extends PluginBase implements Listener
         EntityFactory::getInstance()->register(DoubleGravityArrow::class, function(World $world, CompoundTag $nbt):DoubleGravityArrow{ return new DoubleGravityArrow(EntityDataHelper::parseLocation($nbt, $world),$nbt);}, ['DoubleGravityArrow', 'minecraft:doublegravityarrow']);
         EntityFactory::getInstance()->register(HomingArrow::class, function(World $world, CompoundTag $nbt):HomingArrow{ return new HomingArrow(EntityDataHelper::parseLocation($nbt, $world) ,$nbt);}, ['HomingArrow', 'minecraft:homingarrow']);
         EntityFactory::getInstance()->register(HiPowerHomingArrow::class, function(World $world, CompoundTag $nbt):HiPowerHomingArrow{ return new HiPowerHomingArrow(EntityDataHelper::parseLocation($nbt, $world) ,$nbt);}, ['HiPowerHomingArrow', 'minecraft:hipowerhomingarrow']); 
+        EntityFactory::getInstance()->register(HomingMissileArrow::class, function(World $world, CompoundTag $nbt):HomingMissileArrow{ return new HomingMissileArrow(EntityDataHelper::parseLocation($nbt, $world) ,$nbt);}, ['HomingMissileArrow', 'minecraft:homingmissilearrow']); 
         $this->getScheduler()->scheduleRepeatingTask(new entitykilltask($this), 20);
         $this->getScheduler()->scheduleRepeatingTask(new EffectTask($this), 10);
 	    $this->getScheduler()->scheduleRepeatingTask(new maxentitystask($this), 20);
@@ -228,6 +231,9 @@ class nexuscore extends PluginBase implements Listener
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'HI-POWER-HOMING-BOW') {
             $arrow = new HiPowerHomingArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $event->setProjectile($arrow);
+        } else if ($event->getBow()->getCustomName() === 'HOMING-MISSILE-BOW') {
+            $arrow = new HomingMissileArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         }
     
