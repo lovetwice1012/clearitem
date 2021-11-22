@@ -8,15 +8,19 @@ commands:
     rand:
         description: 乱数を発生させます。
         usage: /rand min max <true | false>
+        permission: nexuscore.rand
     mywarp:
         description: 個人用のワープ地点を登録できます。
         usage: /mywarp
+        permission: nexuscore.mywarp
     myw:
         description: 個人用のワープ地点を登録できます。
         usage: /myw
+        permission: nexuscore.myw
     tpp:
         description: プレイヤーに転送リクエストを送信できます。
         usage: /tpp playername
+        permission: nexuscore.tpp
 permissions:
     nexuscore.rand:
         default: true
