@@ -37,6 +37,7 @@ use pocketmine\item\Item;
 /* Level */
 use pocketmine\world\World;
 use pocketmine\world\Position;
+use pocketmine\entity\Location;
 
 /* Event(entity) */
 use pocketmine\event\Listener;
