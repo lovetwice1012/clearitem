@@ -8,15 +8,6 @@ commands:
     rand:
         description: 乱数を発生させます。
         usage: /rand min max <true | false>
-    lay:
-        description: 光を発生させます。
-        usage: /lay
-    verify:
-        description: TwitterアカウントとXBOXゲーマータグをリンクさせる際に使用する所有権確認コマンドです。(SNSパートナー制度用)
-        usage: /verify code
-    verify-ad:
-        description: TwitterアカウントとXBOXゲーマータグをリンクさせる際に使用する所有権確認コマンドです。(Twitter宣伝制度用)
-        usage: /verify-ad code
     mywarp:
         description: 個人用のワープ地点を登録できます。
         usage: /mywarp
@@ -26,3 +17,12 @@ commands:
     tpp:
         description: プレイヤーに転送リクエストを送信できます。
         usage: /tpp playername
+permissions:
+    nexuscore.rand:
+        default: true
+    nexuscore.mywarp:
+        default: true
+    nexuscore.myw:
+        default: true
+    nexuscore.tpp:
+        default: true
