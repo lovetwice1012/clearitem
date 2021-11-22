@@ -34,7 +34,7 @@ final class HomingMissileArrow extends Arrow{
 	}
 
 	public function entityBaseTick(int $tick = 1):bool{
- 	  $newTarget = $this->level->getNearestEntity($this->getLocation(), 50.0, Living::class);
+ 	  $newTarget = $this->level->getNearestEntity($this->getLocation(), 10.0, Living::class);
           if($newTarget instanceof Living){
             if($this->shooter === null){
 	      $currentTarget = null;
@@ -82,7 +82,7 @@ final class HomingMissileArrow extends Arrow{
 	protected function onHit(ProjectileHitEvent $event) : void{
 		$this->setCritical(false);
 		$this->broadcastSound(new ArrowHitSound());
-		$explosion = new Explosion($event->getEntity()->location->asLocation(), 8);
+		$explosion = new Explosion($event->getEntity()->location->asLocation(), 2);
 		$explosion->explodeB();
 	}
 }

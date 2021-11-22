@@ -106,7 +106,7 @@ class nexuscore extends PluginBase implements Listener
     public static $itemconfig;
     public static $shieldconfig;
     public $wipeconfig;
-    private bool $cancelGuard = false;
+    private $cancelGuard = false;
     public $rewardconfig;
     public $dayconfig;
     public $tppconfig;
@@ -204,36 +204,67 @@ class nexuscore extends PluginBase implements Listener
         if (!$entity instanceof Player) return;
         
         $nbt = $this->createBaseNBT(
-            $entity->getLocation()->add(0, $entity->getEyeHeight()+5.0, 0),
+            $entity->getLocation()->add(0, 1.8, 0),
             $entity->getDirectionVector(),
             ($entity->getLocation()->yaw > 180 ? 360 : 0) - $entity->getLocation()->yaw,
             -$entity->getLocation()->pitch
         );
         
-
+		
         $diff = $entity->getItemUseDuration();
         $p = $diff / 20;
         $baseForce = min((($p ** 2) + $p * 2) / 3, 1);
+        
         if ($event->getBow()->getCustomName() === 'POWER-BOW') {
             $diff = $entity->getItemUseDuration();
             $p = $diff / 20;
             $baseForce = min((($p ** 2) + $p * 2) ** 3, 1);
-            $arrow = new NewArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new NewArrow(Location::fromObject(
+            			$entity->getEyePos(),
+            			$entity->getWorld(),
+            			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+            			- $entity->getLocation->pitch
+            		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'ANTIGRAVITY-BOW') {
-            $arrow = new AntiGravityArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new AntiGravityArrow(Location::fromObject(
+                        			$entity->getEyePos(),
+                        			$entity->getWorld(),
+                        			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+                        			- $entity->getLocation->pitch
+                        		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'DOUBLEGRAVITY-BOW') {
-            $arrow = new DoubleGravityArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new DoubleGravityArrow(Location::fromObject(
+                        			$entity->getEyePos(),
+                        			$entity->getWorld(),
+                        			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+                        			- $entity->getLocation->pitch
+                        		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'HOMING-BOW') {
-            $arrow = new HomingArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new HomingArrow(Location::fromObject(
+                        			$entity->getEyePos(),
+                        			$entity->getWorld(),
+                        			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+                        			- $entity->getLocation->pitch
+                        		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'HI-POWER-HOMING-BOW') {
-            $arrow = new HiPowerHomingArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new HiPowerHomingArrow(Location::fromObject(
+                        			$entity->getEyePos(),
+                        			$entity->getWorld(),
+                        			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+                        			- $entity->getLocation->pitch
+                        		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         } else if ($event->getBow()->getCustomName() === 'HOMING-MISSILE-BOW') {
-            $arrow = new HomingMissileArrow($entity->getLocation() ,$nbt ,$entity ,false ,$entity->getWorld());
+            $arrow = new HomingMissileArrow(Location::fromObject(
+                        			$entity->getEyePos(),
+                        			$entity->getWorld(),
+                        			($entity->getLocation->yaw > 180 ? 360 : 0) - $entity->getLocation->yaw,
+                        			- $entity->getLocation->pitch
+                        		) ,$nbt ,$entity ,false ,$entity->getWorld());
             $event->setProjectile($arrow);
         }
     
