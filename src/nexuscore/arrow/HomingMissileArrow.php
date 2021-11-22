@@ -6,12 +6,11 @@ use pocketmine\entity\{
 	Living,
     Location
 };
-use pocketmine\entity\Human;
 use pocketmine\world\World;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\event\entity\ProjectileHitEntityEvent;
-use pocketmine\math\RayTraceResult;
 use pocketmine\world\Explosion;
+use pocketmine\event\entity\ProjectileHitEvent;
+use pocketmine\world\sound\ArrowHitSound;
 
 final class HomingMissile extends Arrow{
     protected $gravity = 0;
@@ -65,10 +64,10 @@ final class HomingMissile extends Arrow{
 			return false;
 		}
 	
-		$hasUpdate = parent::entityBaseTick($tickDiff);
+		$hasUpdate = parent::entityBaseTick($tick);
 	
 		if($this->blockHit !== null){
-			$this->collideTicks += $tickDiff;
+			$this->collideTicks += $tick;
 			if($this->collideTicks > 1200){
 				$this->flagForDespawn();
 				$hasUpdate = true;
@@ -83,7 +82,7 @@ final class HomingMissile extends Arrow{
 	protected function onHit(ProjectileHitEvent $event) : void{
 		$this->setCritical(false);
 		$this->broadcastSound(new ArrowHitSound());
-		$explosion = new Explosion($event->getProjectile()->location->asLocation(), 5);
+		$explosion = new Explosion($event->getEntity()->location->asLocation(), 5);
 		$explosion->explodeB();
 	}
 }
