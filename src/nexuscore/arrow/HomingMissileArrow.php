@@ -28,13 +28,13 @@ final class HomingMissileArrow extends Arrow{
 			$nbt
 		);
 		if($entity === null) return;
-		$this->setMotion($entity->getDirectionVector()->normalize()->multiply(0.3));
+		$this->setMotion($entity->getDirectionVector()->normalize()->multiply(0.2));
 		$this->shooter = $entity;
 		$this->level = $level;
 	}
 
 	public function entityBaseTick(int $tick = 1):bool{
- 	  $newTarget = $this->level->getNearestEntity($this->getLocation(), 5.0, Living::class);
+ 	  $newTarget = $this->level->getNearestEntity($this->getLocation(), 8.0, Living::class);
           if($newTarget instanceof Living){
             if($this->shooter === null){
 	      $currentTarget = null;
@@ -50,7 +50,7 @@ final class HomingMissileArrow extends Arrow{
           }
 
 	  if($currentTarget !== null){
-		$vector = $currentTarget->getPosition()->add(0, $currentTarget->getEyeHeight() / 2, 0)->subtract($this->getLocation()->getX(),$this->getLocation()->getY(),$this->getLocation()->getZ())->divide(2.0);
+		$vector = $currentTarget->getPosition()->add(0, $currentTarget->getEyeHeight() / 2, 0)->subtract($this->getLocation()->getX(),$this->getLocation()->getY(),$this->getLocation()->getZ())->divide(6.0);
 
 		$distance = $vector->lengthSquared();
 		if($distance < 1){
