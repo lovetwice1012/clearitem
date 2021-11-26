@@ -26,6 +26,10 @@ commands:
         description: サーバーのすべてのユーザーにお金を配布します。
         usage: /gam amount
         permission: nexuscore.gam
+    wwarp:
+        description: サーバー別のワールドにテレポートします。
+        usage: /wwarp
+        permission: nexuscore.wwarp
 permissions:
     nexuscore.rand:
         default: true
@@ -34,6 +38,8 @@ permissions:
     nexuscore.myw:
         default: true
     nexuscore.tpp:
+        default: true
+    nexuscore.wwarp:
         default: true
     nexuscore.gam:
         default: op
