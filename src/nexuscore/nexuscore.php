@@ -100,6 +100,11 @@ use nexuscore\worldwarp\CustomForm;
 use nexuscore\PISB\Task\Sendtask;
 use nexuscore\PISB\Command\johoCommand;
 
+/* EconomyAPI(pm4) */
+/* https://github.com/onebone/EconomyS.git */
+/* https://github.com/lovetwice1012/EconomyAPI-PM4.git */
+use onebone\economyapi\EconomyAPI;
+
 class nexuscore extends PluginBase implements Listener
 {
     public static $defaultwipe;

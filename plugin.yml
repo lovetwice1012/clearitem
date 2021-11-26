@@ -4,6 +4,7 @@ author: lovetwice1012
 api: 4.0.0
 main: nexuscore\nexuscore
 description: Nexusのコアプラグインです。
+depend: [EconomyAPI]
 commands:
     rand:
         description: 乱数を発生させます。

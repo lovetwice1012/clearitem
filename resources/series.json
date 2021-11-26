@@ -22,107 +22,373 @@
         "items": [
             {
                 "id": 261,
-                "meta": 379,
+                "meta": 383,
                 "count": 1,
                 "name": "HOMING-BOW",
-                "description": "矢が敵にホーミングする。5回使うと壊れる。",
+                "description": "矢が敵にホーミングする。2回使うと壊れる。",
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
+        "id": 3,
+        "name": "ANTI-GRAVITY-ARROW",
         "cost": 300,
         "items": [
             {
-                "id": 245,
+                "id": 261,
                 "meta": 0,
                 "count": 1,
-                "name": "",
-                "description": "",
+                "name": "ANTI-GERAVITY-ARROW",
+                "description": "重力が逆に働く代わりにダメージが通常より高い",
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
+        "id": 4,
+        "name": "DOUBLE-GRAVITY-ARROW",
         "cost": 300,
         "items": [
             {
-                "id": 245,
+                "id": 261,
                 "meta": 0,
                 "count": 1,
-                "name": "",
-                "description": "",
+                "name": "DOUBLE-GRAVITY-ARROW",
+                "description": "重力が2倍に働く代わりにダメージが通常より高い",
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
-        "cost": 300,
+        "id": 5,
+        "name": "矢(スタック)",
+        "cost": 100,
         "items": [
             {
-                "id": 245,
+                "id": 362,
                 "meta": 0,
-                "count": 1,
-                "name": "",
-                "description": "",
+                "count": 64,
+                "name": null,
+                "description": null,
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
+        "id": 6,
+        "name": "太古の鎧(頭)",
         "cost": 300,
         "items": [
             {
-                "id": 245,
+                "id": 748,
                 "meta": 0,
                 "count": 1,
-                "name": "",
-                "description": "",
+                "name": "太古の鎧(頭)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
+        "id": 7,
+        "name": "太古の鎧(頭)[爆耐]",
+        "cost": 500,
+        "items": [
+            {
+                "id": 748,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(頭)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [
+                    {
+                        "id": 3,
+                        "level": 5
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 8,
+        "name": "太古の鎧(胴)",
         "cost": 300,
         "items": [
             {
-                "id": 245,
+                "id": 749,
                 "meta": 0,
                 "count": 1,
-                "name": "",
-                "description": "",
+                "name": "太古の鎧(胴)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 9,
+        "name": "太古の鎧(胴)[爆耐]",
+        "cost": 500,
+        "items": [
+            {
+                "id": 749,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(胴)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [
+                    {
+                        "id": 3,
+                        "level": 5
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 10,
+        "name": "太古の鎧(脚)",
+        "cost": 300,
+        "items": [
+            {
+                "id": 750,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(脚)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 11,
+        "name": "太古の鎧(脚)[爆耐]",
+        "cost": 500,
+        "items": [
+            {
+                "id": 750,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(脚)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [
+                    {
+                        "id": 3,
+                        "level": 5
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 12,
+        "name": "太古の鎧(靴)",
+        "cost": 300,
+        "items": [
+            {
+                "id": 751,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(靴)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 13,
+        "name": "太古の鎧(靴)[爆耐]",
+        "cost": 500,
+        "items": [
+            {
+                "id": 751,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(靴)",
+                "description": "特殊な防具。太古の鎧を複数個装備することで被ダメージ時にエフェクトがつく。",
+                "enchants": [
+                    {
+                        "id": 3,
+                        "level": 5
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 14,
+        "name": "太古の鎧(胴)Resurrection",
+        "cost": 600,
+        "items": [
+            {
+                "id": 749,
+                "meta": 0,
+                "count": 1,
+                "name": "太古の鎧(胴)Resurrection",
+                "description": "自分のHPより多くのダメージを受けたとき、１度だけ復活する",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 15,
+        "name": "シールドスーツPRO(胴)",
+        "cost": 750,
+        "items": [
+            {
+                "id": 749,
+                "meta": 0,
+                "count": 1,
+                "name": "シールドスーツPRO(胴)",
+                "description": "自分へのダメージを肩代わりしてくれるシールド値を付与してくれる。反映には一度死ぬ必要がある。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 16,
+        "name": "シールドスーツ(胴)",
+        "cost": 400,
+        "items": [
+            {
+                "id": 749,
+                "meta": 0,
+                "count": 1,
+                "name": "シールドスーツ(胴)",
+                "description": "自分へのダメージを肩代わりしてくれるシールド値を付与してくれる。反映には一度死ぬ必要がある。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 17,
+        "name": "聖剣エクスカリバー",
+        "cost": 300,
+        "items": [
+            {
+                "id": 743,
+                "meta": 0,
+                "count": 1,
+                "name": "聖剣エクスカリバー",
+                "description": null,
+                "enchants": [
+                    {
+                        "id": 16,
+                        "level": 5
+                    },
+                    {
+                        "id": 19,
+                        "level": 3
+                    },
+                    {
+                        "id": 20,
+                        "level": 10
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 18,
+        "name": "政権キシダカリバー",
+        "cost": 150,
+        "items": [
+            {
+                "id": 276,
+                "meta": 0,
+                "count": 1,
+                "name": "政権キシダカリバー",
+                "description": null,
+                "enchants": [
+                    {
+                        "id": 16,
+                        "level": 3
+                    },
+                    {
+                        "id": 19,
+                        "level": 1
+                    }
+                ],
+                "chance": 100
+                }
+            ]
+    }
+    ,
+    {
+        "id": 19,
+        "name": "金リンゴ",
+        "cost": 300,
+        "items": [
+            {
+                "id": 322,
+                "meta": 0,
+                "count": 1,
+                "name": null,
+                "description": null,
                 "enchants": [],
                 "chance": 100
                 }
             ]
     },
     {
-        "id": 2,
-        "name": "",
-        "cost": 300,
+        "id": 20,
+        "name": "エンチャントされた金リンゴ",
+        "cost": 400,
         "items": [
             {
-                "id": 245,
+                "id": 466,
                 "meta": 0,
                 "count": 1,
-                "name": "",
-                "description": "",
+                "name": null,
+                "description": null,
                 "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 21,
+        "name": "ぶっ飛び棒",
+        "cost": 10,
+        "items": [
+            {
+                "id": 280,
+                "meta": 0,
+                "count": 1,
+                "name": "ぶっ飛び棒",
+                "description": "マッチ後に使用。マッチ中は使用禁止",
+                "enchants": [
+                    {
+                        "id": 19,
+                        "level": 8
+                    }
+                ],
                 "chance": 100
                 }
             ]
