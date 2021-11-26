@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "name": "HOMING-MISSILE-BOW",
+        "cost": 600,
+        "items": [
+            {
+                "id": 261,
+                "meta": 384,
+                "count": 1,
+                "name": "HOMiNG-MISSILE-BOW",
+                "description": "矢が敵にホーミングし、着弾地点で爆発する。1回しか使えない。",
+                "enchants": [],
+                "chance": 100
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "HOMING-BOW",
+        "cost": 375,
+        "items": [
+            {
+                "id": 261,
+                "meta": 379,
+                "count": 1,
+                "name": "HOMING-BOW",
+                "description": "矢が敵にホーミングする。5回使うと壊れる。",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    },
+    {
+        "id": 2,
+        "name": "",
+        "cost": 300,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": "",
+                "description": "",
+                "enchants": [],
+                "chance": 100
+                }
+            ]
+    }
+]

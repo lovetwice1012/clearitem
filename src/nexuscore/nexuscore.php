@@ -321,72 +321,6 @@ if($projectile->namedtag->offsetExists("TeleportBow")){
                     $this->getLogger()->info("§e[rand] §cコンソールからの実行はできません");
                 }
                 break;
-            case "verify":
-                if ($sender instanceof Player) {
-                    $player = $sender->getServer()->getPlayerByPrefix($sender->getName());
-                    $gamertag = $player->getName();
-                    if (!isset($args[0])) return false;
-                    $code = $args[0];
-                    $url = 'https://www.playnexus.online/twitter/oauth/api/v0.1-beta/verify.php?token=gkzyaun9ctp355d64rp9r4fkewk66kyrw9xgp62ph45jkrxpx9t25utac7zesiji88muieyzbmj8yxfucy6iizin3r37rpsjrm2d';
-
-                    $data = array(
-                        "gamertag" => $gamertag,
-                        "code" => $code
-                    );
-                    $data = http_build_query($data, "", "&");
-
-                    // header
-                    $header = array(
-                        "Content-Type: application/x-www-form-urlencoded",
-                        "Content-Length: " . strlen($data)
-                    );
-
-                    $context = array(
-                        "http" => array(
-                            "method" => "POST",
-                            "header" => implode("\r\n", $header),
-                            "content" => $data
-                        )
-                    );
-
-                    $html = @file_get_contents($url, false, stream_context_create($context));
-                    $sender->sendMessage($html);
-
-                }
-                break;
-            case "verify-ad":
-                if ($sender instanceof Player) {
-                    $player = $sender->getServer()->getPlayerByPrefix($sender->getName());
-                    $gamertag = $player->getName();
-                    if (!isset($args[0])) return false;
-                    $code = $args[0];
-                    $url = 'https://www.playnexus.online/twitter/oauth/api/v0.1-beta/verify-ad.php?token=gkzyaun9ctp355d64rp9r4fkewk66kyrw9xgp62ph45jkrxpx9t25utac7zesiji88muieyzbmj8yxfucy6iizin3r37rpsjrm2d';
-
-                    $data = array(
-                        "gamertag" => $gamertag,
-                        "code" => $code
-                    );
-                    $data = http_build_query($data, "", "&");
-
-                    // header
-                    $header = array(
-                        "Content-Type: application/x-www-form-urlencoded",
-                        "Content-Length: " . strlen($data)
-                    );
-
-                    $context = array(
-                        "http" => array(
-                            "method" => "POST",
-                            "header" => implode("\r\n", $header),
-                            "content" => $data
-                        )
-                    );
-
-                    $html = @file_get_contents($url, false, stream_context_create($context));
-                    $sender->sendMessage($html);
-
-                }
-                break;
                 case "mywarp":
                 case "myw":
                 if ($sender instanceof Player) {
@@ -456,6 +390,12 @@ if($projectile->namedtag->offsetExists("TeleportBow")){
                 $customForm->addDropdown("Level", WMAPI::getAllLevels());
                 $sender->getServer()->getPlayerByPrefix($sender->getName())->sendForm($customForm); 
                 return true;
+                break;
+                case "gam":
+                    $players = Server::getInstance()->getOnlinePlayers();
+                    foreach ($players as $p){
+                        EconomyAPI::getInstance()->addMoney($p, $args[0] ?: 1500);
+                    }
         }
         return true;
     }

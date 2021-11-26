@@ -21,6 +21,10 @@ commands:
         description: プレイヤーに転送リクエストを送信できます。
         usage: /tpp playername
         permission: nexuscore.tpp
+    gam:
+        description: サーバーのすべてのユーザーにお金を配布します。
+        usage: /gam amount
+        permission: nexuscore.gam
 permissions:
     nexuscore.rand:
         default: true
@@ -30,3 +34,5 @@ permissions:
         default: true
     nexuscore.tpp:
         default: true
+    nexuscore.gam:
+        default: op
